@@ -1,0 +1,15 @@
+{
+	"name": "swiper-scroll",
+	"version": "1.0.0",
+	"description": "swiper-scroll",
+	"main": "index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"browser-sync": "^2.27.11",
+		"gulp": "^4.0.2"
+	}
+}
