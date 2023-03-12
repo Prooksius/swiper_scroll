@@ -2,12 +2,12 @@ gsap.registerPlugin(ScrollTrigger)
 
 document.addEventListener('DOMContentLoaded', function (event) {
 	//
-	// количество скролла для одного слайда. 
-  // Чем больше - тем больше надо крутить колесом, чтобы проскроллить на следующий слайд
+	// количество скролла для одного слайда.
+	// Чем больше - тем больше надо крутить колесом, чтобы проскроллить на следующий слайд
 	const slideSpace = 500
 
 	const slidesCount = document.querySelectorAll('.swiper-slide').length
-	const pinSpace = slidesCount * slideSpace 
+	const pinSpace = slidesCount * slideSpace
 
 	const mainSwiper = new Swiper('.main-swiper', {
 		slidesPerView: 1,
@@ -25,11 +25,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		pin: true,
 		pinSpacing: true,
 		onUpdate: (self) => {
-			console.log('self.progress', self.progress)
 			const slide = parseInt(self.progress * slidesCount)
 			if (curSlide !== slide) {
 				curSlide = slide
-				mainSwiper.slideTo(slide)
+				if (slide < slidesCount) {
+					mainSwiper.slideTo(slide)
+				}
 			}
 		},
 	})
